@@ -1,6 +1,7 @@
 import { Module } from "@nestjs/common";
 import { ConfigModule } from "@nestjs/config";
 import { SequelizeModule } from '@nestjs/sequelize';
+import { Kotelnaya } from "./kotelnaya/kotelnaya.model";
 import { KotelnayaModule } from './kotelnaya/kotelnaya.module';
 
 @Module({
@@ -18,7 +19,7 @@ import { KotelnayaModule } from './kotelnaya/kotelnaya.module';
 			username: process.env.POSTGRES_USER,
 			password: process.env.POSTGRES_PASSWORD,
 			database: process.env.POSTGRES_DB,
-			models: [],
+			models: [Kotelnaya],
 			autoLoadModels: true,
 		}),
 		KotelnayaModule,
